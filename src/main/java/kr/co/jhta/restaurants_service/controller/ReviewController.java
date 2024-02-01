@@ -20,10 +20,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Storage;
+//import com.google.cloud.storage.Blob;
+//import com.google.cloud.storage.BlobId;
+//import com.google.cloud.storage.BlobInfo;
+//import com.google.cloud.storage.Storage;
 
 import kr.co.jhta.restaurants_service.controller.command.ReviewCommentCommand;
 import kr.co.jhta.restaurants_service.controller.command.ReviewReportCommand;
@@ -50,7 +50,7 @@ public class ReviewController {
 	
 	private final StoreService storeService;
 	
-	private final Storage storage;
+//	private final Storage storage;
 
 	public static String[] PUBLIC_URLS = {
 			"/review/detail",
@@ -77,22 +77,22 @@ public class ReviewController {
 		int idx = 0;
 		List<String> uuidPrefixedFileNames = reviewService.createReview(form, securityUser);
 
-		try {
-			String bucketName = "jhta-restaurants-sns-service";
-			for(MultipartFile imageName : form.getChooseFile()) {
-				String objectName = "review/" + uuidPrefixedFileNames.get(idx);
-
-				BlobId blobId = BlobId.of(bucketName, objectName);
-				BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType(imageName.getContentType()).build();
-
-				Blob blob = storage.create(blobInfo, imageName.getBytes());
-
-				idx += 1;
-			}
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			String bucketName = "jhta-restaurants-sns-service";
+//			for(MultipartFile imageName : form.getChooseFile()) {
+//				String objectName = "review/" + uuidPrefixedFileNames.get(idx);
+//
+//				BlobId blobId = BlobId.of(bucketName, objectName);
+//				BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType(imageName.getContentType()).build();
+//
+//				Blob blob = storage.create(blobInfo, imageName.getBytes());
+//
+//				idx += 1;
+//			}
+//
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 
 		return "redirect:/store/detail?id=" + form.getStoreId();
 	}

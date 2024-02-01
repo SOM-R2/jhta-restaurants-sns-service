@@ -15,10 +15,18 @@ logging:
 spring:
   # 커넥션 풀 설정
   datasource:
-    url: jdbc:mysql://jhtafinal.c8qipvzhd4ot.ap-northeast-2.rds.amazonaws.com:3306/database1
-    username: admin
-    password: zxcv1234
+    url: jdbc:mysql://localhost:3306/database1
+    username: root
+    password: 0000
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+#spring:
+#  # 커넥션 풀 설정
+#  datasource:
+#    url: jdbc:mysql://jhtafinal.c8qipvzhd4ot.ap-northeast-2.rds.amazonaws.com:3306/database1
+#    username: admin
+#    password: zxcv1234
+#    driver-class-name: com.mysql.cj.jdbc.Driver
   #  datasource:
   #    driver-class-name: oracle.jdbc.OracleDriver
   #    url: jdbc:oracle:thin:@localhost:1521:xe
@@ -34,20 +42,20 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: thecynicdog0328@gmail.com
-    password: qnrgaosvbyyasouh
+    username: duqrlvlfry02@gmail.com
+    password: sjleee1!
     properties:
       mail:
         smtp:
           starttls:
             enable: true
-  main:
-    allow-bean-definition-overriding: true
-  cloud:
-    gcp:
-      storage:
-        credentials:
-          location: classpath:clean-utility-397500-2724d898a363.json
+#  main:
+#    allow-bean-definition-overriding: true
+#  cloud:
+#    gcp:
+#      storage:
+#        credentials:
+#          location: classpath:clean-utility-397500-2724d898a363.json
 
 mybatis:
   mapper-locations:

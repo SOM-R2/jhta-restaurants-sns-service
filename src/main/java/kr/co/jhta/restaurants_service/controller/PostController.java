@@ -10,11 +10,11 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
+//import com.google.cloud.storage.Blob;
+//import com.google.cloud.storage.BlobId;
+//import com.google.cloud.storage.BlobInfo;
+//import com.google.cloud.storage.Storage;
+//import com.google.cloud.storage.StorageOptions;
 
 import kr.co.jhta.restaurants_service.controller.command.PostCommand;
 import kr.co.jhta.restaurants_service.controller.command.PostCommentCommand;
@@ -58,7 +58,7 @@ public class PostController {
     public final PostService postService;
     public final StoreService storeService;
     private final ReviewService reviewService;
-    private final Storage storage;
+ //   private final Storage storage;
 
     public static String[] PUBLIC_URLS = {
             "/post/getStores",
@@ -98,18 +98,18 @@ public class PostController {
     public ResponseEntity<String> insertPostData(MultipartFile chooseFile, int storeId, String content, @RequestParam(name = "data-id") int toBeDeleted, HttpSession httpSession) throws IOException {
 
         String uuidPrefixedFileName = UUID.randomUUID().toString() + "-" + chooseFile.getOriginalFilename();
-        try {
-            String bucketName = "jhta-restaurants-sns-service";
-            String objectName = "post/" + uuidPrefixedFileName;
-
-            BlobId blobId = BlobId.of(bucketName, objectName);
-            BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType(chooseFile.getContentType()).build();
-
-            Blob blob = storage.create(blobInfo, chooseFile.getBytes());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            String bucketName = "jhta-restaurants-sns-service";
+//            String objectName = "post/" + uuidPrefixedFileName;
+//
+//            BlobId blobId = BlobId.of(bucketName, objectName);
+//            BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType(chooseFile.getContentType()).build();
+//
+//            Blob blob = storage.create(blobInfo, chooseFile.getBytes());
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         List<PostDataCommand> postDataCommands = (List<PostDataCommand>) httpSession.getAttribute("postData");
 

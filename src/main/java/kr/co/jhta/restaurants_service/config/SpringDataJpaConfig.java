@@ -21,9 +21,9 @@ public class SpringDataJpaConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://jhtafinal.c8qipvzhd4ot.ap-northeast-2.rds.amazonaws.com:3306/database1");
-        dataSource.setUsername("admin");
-        dataSource.setPassword("zxcv1234");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/database1");
+        dataSource.setUsername("root");
+        dataSource.setPassword("0000");
 
         return dataSource;
     }

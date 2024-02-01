@@ -51,7 +51,7 @@ public class SecurityConfiguration {
                     urlRegistry.antMatchers(PostController.PUBLIC_URLS).permitAll();
                     urlRegistry.antMatchers("/post/**").authenticated();
 
-                    urlRegistry.antMatchers(ImageController.PUBLIC_URLS).permitAll();
+                   // urlRegistry.antMatchers(ImageController.PUBLIC_URLS).permitAll();
                     urlRegistry.antMatchers("/images/**").authenticated();
 
                     urlRegistry.antMatchers(HomeController.PUBLIC_URLS).permitAll();

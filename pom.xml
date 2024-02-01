@@ -157,12 +157,12 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>5.6.9.Final</version>
         </dependency>
-        <dependency>
+   <!-- <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>spring-cloud-gcp-starter-storage</artifactId>
-        </dependency>
+        </dependency>-->
     </dependencies>
-    <dependencyManagement>
+  <!--  <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -179,7 +179,7 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
-    </dependencyManagement>
+    </dependencyManagement>-->
 
     <build>
         <plugins>
