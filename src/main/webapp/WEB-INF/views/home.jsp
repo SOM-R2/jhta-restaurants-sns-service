@@ -71,7 +71,7 @@
 			
 			<div class="col-4 mb-3 me-3 pt-5" id="home-content"></div>
 			<div class="col-3 pt-5 home-side-contents" >
-				<h4 class="mb-4" style="color:#ff792a;">인기 포스트</h4>
+				<h4 class="mb-4" style="color:#ff792a;">인기  포스트</h4>
 				<c:forEach var="post" items="${postList}">
 					<div class="card mb-3" style="border: none; cursor: pointer;" onclick="location.href='/post/detail?id=${post.id}'">
 						<div class="row d-flex justify-content-start">
